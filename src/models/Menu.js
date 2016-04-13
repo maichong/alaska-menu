@@ -9,6 +9,7 @@ export default class Menu extends service.Model {
   static title = 'title';
   static defaultColumns = 'title,createdAt';
   static defaultSort = '-sort';
+  static api = { show: 1 };
 
   static fields = {
     title: {
@@ -20,7 +21,8 @@ export default class Menu extends service.Model {
       label: 'KEY',
       type: String,
       index: true,
-      unique: true
+      unique: true,
+      required: true
     },
     items: {
       label: 'Menu Items',
@@ -29,13 +31,21 @@ export default class Menu extends service.Model {
     },
     createdAt: {
       label: 'Created At',
-      type: Date
+      type: Date,
+      private: true
     }
   };
 
-  preSave() {
+  async preSave() {
     if (!this.createdAt) {
       this.createdAt = new Date;
+    }
+
+    if (this.key) {
+      let count = await Menu.count({ key: this.key }).where('_id').ne(this._id);
+      if (count) {
+        service.error('Menu key is exists');
+      }
     }
   }
 }
