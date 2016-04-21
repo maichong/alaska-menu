@@ -1,6 +1,6 @@
 {
   "name": "alaska-menu",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Alaska menu service",
   "main": "lib/alaska-menu.js",
   "scripts": {
@@ -27,8 +27,8 @@
     "alaska": "*"
   },
   "dependencies": {
-    "alaska-field-datetime": "^0.6.0",
-    "alaska-field-mixed": "^0.6.0",
-    "alaska-field-text": "^0.6.0"
+    "alaska-field-datetime": "^0.8.0",
+    "alaska-field-mixed": "^0.8.0",
+    "alaska-field-text": "^0.8.0"
   }
 }
