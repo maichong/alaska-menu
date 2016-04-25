@@ -7,7 +7,7 @@
 export default class Menu extends service.Model {
   static label = 'Menu';
   static title = 'title';
-  static defaultColumns = '_id,title,createdAt';
+  static defaultColumns = '_id title createdAt';
   static defaultSort = '-sort';
   static api = { show: 1 };
 
