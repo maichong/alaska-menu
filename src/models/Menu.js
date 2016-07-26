@@ -4,8 +4,11 @@
  * @author Liang <liang@maichong.it>
  */
 
-export default class Menu extends service.Model {
+import alaska from 'alaska';
+
+export default class Menu extends alaska.Model {
   static label = 'Menu';
+  static icon = 'list';
   static title = 'title';
   static defaultColumns = '_id title createdAt';
   static defaultSort = '-sort';

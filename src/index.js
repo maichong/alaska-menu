@@ -9,7 +9,7 @@ import alaska from 'alaska';
 /**
  * @class MenuService
  */
-export default class MenuService extends alaska.Service {
+class MenuService extends alaska.Service {
   constructor(options, alaska) {
     options = options || {};
     options.dir = options.dir || __dirname;
@@ -17,3 +17,5 @@ export default class MenuService extends alaska.Service {
     super(options, alaska);
   }
 }
+
+export default new MenuService();
